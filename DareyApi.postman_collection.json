@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "39f59855-2b00-420e-84c6-4a85ffdc3ce3",
+		"name": "Darey.io",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23638447",
+		"_collection_link": "https://www.postman.com/planetary-space-5683/workspace/darey-io/collection/23638447-39f59855-2b00-420e-84c6-4a85ffdc3ce3?action=share&creator=23638447&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "List all providers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"swagger.io\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.apis.guru/v2/providers.json",
+					"protocol": "https",
+					"host": [
+						"api",
+						"apis",
+						"guru"
+					],
+					"path": [
+						"v2",
+						"providers.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get basic metrics",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"providerCount\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.apis.guru/v2/metrics.json",
+					"protocol": "https",
+					"host": [
+						"api",
+						"apis",
+						"guru"
+					],
+					"path": [
+						"v2",
+						"metrics.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all APIs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"1Forge Finance APIs\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.apis.guru/v2/list.json",
+					"protocol": "https",
+					"host": [
+						"api",
+						"apis",
+						"guru"
+					],
+					"path": [
+						"v2",
+						"list.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all APIs for a particular provider",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Events API\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.apis.guru/v2/1password.com.json",
+					"protocol": "https",
+					"host": [
+						"api",
+						"apis",
+						"guru"
+					],
+					"path": [
+						"v2",
+						"1password.com.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all serviceNames for a particular provider",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"data\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.apis.guru/v2/1password.com/services.json",
+					"protocol": "https",
+					"host": [
+						"api",
+						"apis",
+						"guru"
+					],
+					"path": [
+						"v2",
+						"1password.com",
+						"services.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve one version of a particular API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"contact@1forge.com\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.apis.guru/v2/specs/1forge.com/0.0.1.json",
+					"protocol": "https",
+					"host": [
+						"api",
+						"apis",
+						"guru"
+					],
+					"path": [
+						"v2",
+						"specs",
+						"1forge.com",
+						"0.0.1.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve one version of a particular API with a serviceName.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"version\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.apis.guru/v2/list.json",
+					"protocol": "https",
+					"host": [
+						"api",
+						"apis",
+						"guru"
+					],
+					"path": [
+						"v2",
+						"list.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dictionary API Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"BY 3.0 US\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.dictionaryapi.dev/api/v2/entries/en/beautiful",
+					"protocol": "https",
+					"host": [
+						"api",
+						"dictionaryapi",
+						"dev"
+					],
+					"path": [
+						"api",
+						"v2",
+						"entries",
+						"en",
+						"beautiful"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
